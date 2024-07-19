@@ -1,1 +1,10 @@
-<p>user-list works!</p>
+<div class="user-list">
+    <ul>
+        <li *ngFor="let user of users$ | async">
+            <a>
+                <img [src]="user.avatar" alt="{{ user.first_name }}" class="avatar">
+                <span>{{ user.first_name }} {{ user.last_name }}</span>
+            </a>
+        </li>
+    </ul>
+</div>

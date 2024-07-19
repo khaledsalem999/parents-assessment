@@ -1,7 +1,7 @@
 <div class="user-list">
     <ul>
         <li *ngFor="let user of users$ | async">
-            <a>
+            <a [routerLink]="['/users', user.id]">
                 <img [src]="user.avatar" alt="{{ user.first_name }}" class="avatar">
                 <span>{{ user.first_name }} {{ user.last_name }}</span>
             </a>

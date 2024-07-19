@@ -1,0 +1,21 @@
+.container-fluid {
+    background-color: #f8f9fa;
+  }
+  .card {
+    border-radius: 0.5rem;
+  }
+  .card-body {
+    padding: 2rem;
+  }
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  .form-control {
+    border-radius: 0.25rem;
+  }
+  .btn-primary {
+    background-color: #6f42c1;
+    border-color: #6f42c1;
+  }
+  

@@ -1,10 +1,32 @@
-<form [formGroup]="loginForm" (ngSubmit)="login()">
-    <label for="email">Email:</label>
-    <input id="email" formControlName="email" type="email">
-    
-    <label for="password">Password:</label>
-    <input id="password" formControlName="password" type="password">
-    
-    <button type="submit">Login</button>
-</form>
-  
+<div class="container-fluid vh-100 d-flex justify-content-center align-items-center">
+    <div class="card shadow-lg" style="max-width: 800px;">
+        <div class="d-flex flex-row">
+            <div class="col-md-6 d-none d-md-block">
+                <img src="https://architouch.com/wp-content/uploads/2023/02/alesia-kazantceva-E8dAbseeFLo-unsplash-scaled.jpg"
+                    class="card-img" alt="login image" style="border-radius: 0.5rem 0 0 0.5rem;">
+            </div>
+            <div class="px-3 my-auto w-100">
+                <div class="w-100">
+                    <h5 class="card-title mb-3">Welcome back!</h5>
+                    <p class="card-text mb-4">Please login to access your Spaces Dashboard</p>
+                    <form [formGroup]="loginForm" (ngSubmit)="login()">
+                        <div class="form-group mb-3">
+                            <label for="email">Username</label>
+                            <input id="email" formControlName="email" type="email" class="form-control"
+                                placeholder="Username...">
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="password">Password</label>
+                            <input id="password" formControlName="password" type="password" class="form-control"
+                                placeholder="**********">
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="#" class="text-primary">Forgot password?</a>
+                            <button type="submit" class="btn btn-primary">LOGIN</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

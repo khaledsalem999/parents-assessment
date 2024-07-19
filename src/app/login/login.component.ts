@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { UserService } from '../services/user.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
   loginForm: FormGroup;
@@ -17,19 +17,21 @@ export class LoginComponent {
     private router: Router
   ) {
     this.loginForm = this.fb.group({
-      email: [''],
-      password: ['']
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required]
     });
   }
 
   login() {
-    this.userService.login(this.loginForm.value).subscribe(
-      () => {
-        this.router.navigate(['/users']);
-      },
-      (error) => {
-        console.error('Login error', error);
-      }
-    );
+    if (this.loginForm.valid) {
+      this.userService.login(this.loginForm.value).subscribe(
+        () => {
+          this.router.navigate(['/users']);
+        },
+        error => {
+          console.error('Login error', error);
+        }
+      );
+    }
   }
 }
